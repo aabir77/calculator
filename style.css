@@ -1,0 +1,60 @@
+*, *::before, *::after {    /*select the before and after code we did or do*/
+
+   box-sizing: border-box;
+   font-family:Arial, Helvetica, sans-serif;
+   font-weight:normal;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background:linear-gradient(to right, #00AAFF,#00FF6C);
+}
+.calculator-grid {
+display: grid;
+justify-content: center; 
+align-content: center;
+min-height: 100vh;
+grid-template-columns: repeat(4, 100px); /*as we have 4 columns and each size we assume 100px.it will make how many column we want,*/
+grid-template-rows: minmax(120px, auto) repeat(5, 100px); /* we have 5 rows and minmax(means it can min valule fo 100px and max is auto adjust)*/
+
+}
+
+.calculator-grid > button {
+  cursor: pointer;
+  font-size: 2rem;
+  border: 1px solid white;
+  outline: none;
+  background-color: rgba( 255, 255, 255, .75);
+
+}
+
+.calculator-grid > button:hover {
+  background-color:rgba( 255, 255, 255, .9);
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+.output {
+  grid-column: 1 / -1  ; /* adjust the output section */
+  background-color: rgba(0 , 0, 0, .75);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 10px;
+  word-wrap: break-word; /* if the word is too long then it will break and make another line */
+  word-break: break-all; /* same as above */
+}
+
+.output .previous-operand {
+  color: rgba( 255, 255, 255, .75);
+  font-size: 1.5rem;
+}
+.output .current-operand {
+  color: white;
+  font-size: 2.5rem;
+}
+  
